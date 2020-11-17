@@ -1,0 +1,26 @@
+{
+  "name": "hotel-management-php",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-sass": "node-sass --watch public/scss -o public/css/ -r",
+    "dev": "live-server --open=public/",
+    "start": "concurrently \"npm run watch-sass\" \"npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alandsilva26/hotel-management-php.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alandsilva26/hotel-management-php/issues"
+  },
+  "homepage": "https://github.com/alandsilva26/hotel-management-php#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.14.1"
+  }
+}

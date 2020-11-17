@@ -1,0 +1,34 @@
+#admin-header {
+  .navbar {
+    height: $navbar-height;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .nav-item {
+      .nav-link {
+        color: rgb(214, 214, 214);
+      }
+    }
+
+    .navbar-collapse {
+      padding: 0.5em;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-mobile) {
+    .side-nav {
+      position: fixed;
+      top: $navbar-height;
+      left: 0;
+      width: $side-nav-width;
+      height: calc(100vh - #{$navbar-height});
+      flex-direction: column;
+
+      .nav-item {
+        margin: 0.5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.banner {
+  .jumbotron {
+    background: transparent;
+    color: white;
+    padding: 4em 0em;
+
+    h6 {
+      color: rgba(184, 184, 184, 0.993);
+    }
+    h2 {
+      font-size: 2.5;
+    }
+  }
+
+  background: $red-gradient-1;
+  margin: 1em 0em;
+  margin-top: 5em;
+  box-shadow: 0px 1px 2px $red-gradient-1-shadow,
+    0px 2px 4px $red-gradient-1-shadow, 0px 4px 8px $red-gradient-1-shadow,
+    0px 8px 16px $red-gradient-1-shadow, 0px 16px 32px $red-gradient-1-shadow,
+    0px 32px 64px $red-gradient-1-shadow;
+}

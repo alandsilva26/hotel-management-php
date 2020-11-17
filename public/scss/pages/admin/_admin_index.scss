@@ -1,0 +1,6 @@
+#admin-main {
+  section.content {
+    overflow-x: scroll;
+    height: calc(100vh - #{$navbar-height} - #{$admin-pad});
+  }
+}

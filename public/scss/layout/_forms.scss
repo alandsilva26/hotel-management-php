@@ -1,0 +1,167 @@
+.auth--wrapper {
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+  }
+
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-image: url("../media/images/backgrounds/login-bg-1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .bg-image {
+    padding: $navbar-height;
+    padding-top: 5em;
+
+    span {
+      display: block;
+      width: 80%;
+      font-size: 2.5em;
+      font-weight: 700;
+      color: white;
+    }
+  }
+
+  .form-wrapper {
+    background: white;
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: $navbar-height;
+
+    .form-card {
+      width: 65%;
+      height: 100%;
+      // padding: 2em 5em;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h2 {
+        text-align: center;
+        margin: 1em 0em 1em 0em;
+        font-weight: 700;
+      }
+
+      .group {
+        position: relative;
+
+        button.btn {
+          display: block;
+          width: 100%;
+          height: 50px;
+          border-radius: 3em;
+          font-size: large;
+          font-weight: 600;
+          color: rgba(0, 0, 0, 0.8);
+          background: white;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
+            0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07);
+          transition: 0.15s ease-in;
+        }
+
+        img {
+          display: block;
+          height: 30px;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+        }
+      }
+
+      h5 {
+        color: grey;
+        text-align: center;
+        margin-top: 1em;
+      }
+
+      .form {
+        .form-group {
+          label {
+            margin: 15px 0;
+            display: none;
+          }
+
+          .form-control {
+            height: 50px;
+            border-radius: 3em;
+            padding: 20px;
+            margin: 1em 0;
+            font-size: large;
+            font-weight: bold;
+            color: black;
+          }
+
+          .form-control:focus {
+            border: 3px solid $red-gradient-1;
+            box-shadow: none;
+          }
+
+          .step {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 1em;
+
+            .btn {
+              display: block;
+              width: 100%;
+              height: 50px;
+              border-radius: 3em;
+              margin: 1.5em 0;
+              font-size: larger;
+              border: 3px solid $red-gradient-1;
+            }
+
+            .btn:nth-child(2) {
+              color: white;
+              background: linear-gradient(45deg, $red-gradient-1, red);
+              border: none;
+            }
+          }
+
+          button[type="submit"] {
+            display: block;
+            width: 100%;
+            height: 50px;
+            border-radius: 3em;
+            margin: 1.5em 0;
+            background: linear-gradient(45deg, $red-gradient-1, red);
+            border: none;
+            color: white;
+            font-size: larger;
+          }
+        }
+      }
+
+      // End form
+
+      .btn:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+      button:hover,
+      .btn:hover {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+          0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07);
+        transition: 0.15s ease-in;
+      }
+    }
+  }
+
+  .alternate-auth {
+    font-size: large;
+    font-weight: 600;
+    color: $better-grey;
+
+    a {
+      color: green;
+    }
+  }
+}
