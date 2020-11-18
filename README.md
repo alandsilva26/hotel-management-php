@@ -29,7 +29,8 @@ Testing workflow
 
 # Additional tasks
 
-- [ ] - Admin section
+- [ ] - View all rooms
+- [ ] - Add new room
 
 ## Extra tasks
 
