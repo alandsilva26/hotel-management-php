@@ -1,99 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Bootstrap css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-
-    <!-- Jquery UI theme -->
-    <link
-      rel="stylesheet"
-      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <!-- Custom css -->
-    <link rel="stylesheet" href="./css/main.css" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>Hotel Management</title>
-  </head>
+<?php include("./includes/header.php"); ?>
   <body>
     <header id="home-header">
       <div id="home-header--bg-image">
-        <nav class="navbar navbar-expand-md px-md-5">
-          <a class="navbar-brand" href="./index.html">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./rooms.html">Rooms</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#reservation-form"
-                  >Reservations</a
-                >
-              </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Account
-                </a>
-                <div
-                  class="dropdown-menu dropdown-menu-right"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <span class="dropdown-item"
-                    >Signed in as <b>lemon potter</b></span
-                  >
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="./admin/index.html">Admin</a>
-                  <a class="dropdown-item" href="login.html">Log in</a>
-                  <a class="dropdown-item" href="signup.html">Sign up</a>
-                  <a class="dropdown-item" href="signup.html">Account</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <?php include("./includes/navbar.php"); ?>
         <div class="home-header--title">
           <div class="container p-5">
             <h1>Find the best deals</h1>
@@ -257,7 +166,7 @@
             </div> -->
           </div>
         </div>
-      </section>
+        </section>
 
       <section id="decoration-accomodation">
         <div class="container my-5 py-5">
@@ -358,91 +267,6 @@
         </div>
       </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
-      <!-- Footer Links -->
-      <div class="container">
-        <!-- Grid row -->
-        <div class="row">
-          <!-- Grid column -->
-          <div class="col-md-4 mb-md-0 mb-3">
-            <h5>Hotel Lemon</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">About us</a>
-              </li>
-              <li>
-                <a href="#!">Developers</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="More">Links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Rooms</a>
-              </li>
-              <li>
-                <a href="#!">Services</a>
-              </li>
-              <li>
-                <a href="#!">About</a>
-              </li>
-              <li>
-                <a href="#!">News </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-4 mb-md-0 mb-3">
-            <!-- Links -->
-            <h5 class="">Get in touch</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Toll Free no. </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-      <!-- Footer Links -->
-
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">
-        © 2020 Copyright:
-        <a href="https://github.com/alandsilva26/hotel-management-php/"
-          >Tripple A association</a
-        >
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-
-    <!-- Jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <!-- Bootstrap  -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Custom js -->
-    <script src="./js/handle-home-form.js"></script>
-    <script src="./js/parallax.js"></script>
-    <script src="./js/smooth-scroll.js"></script>
-  </body>
+<?php include("./includes/footer.php"); ?>
+</body>
 </html>
