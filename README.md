@@ -1,7 +1,10 @@
-# hotel-management-php ![Deploy static files to github pages](https://github.com/alandsilva26/hotel-management-php/workflows/Deploy%20static%20files%20to%20github%20pages/badge.svg)
+# hotel-management-php
 
 Semester 5 Web Development Lab Project. Hotel management system using php and mysql.
-Testing workflow
+
+## Dependencies
+
+- PHP and mysql
 
 # Get started
 
@@ -35,14 +38,3 @@ Testing workflow
 ## Extra tasks
 
 - Gather resources(hotel management websites for reference, templates for reference, good designs, etc)
-
-## Project Dependencies
-
-- [Bootstrap](https://getbootstrap.com/)
-- [Jquery](https://jquery.com/)
-
-## Development Dependencies
-
-- [Visual Studio Code](https://code.visualstudio.com/)
-  - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [XAMPP](https://www.apachefriends.org/index.html)
