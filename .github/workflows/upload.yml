@@ -1,0 +1,28 @@
+name: Deploy to ftp server
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: List output files
+        run: ls
+
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          LOCAL_DIR: public
+          REMOTE_DIR: hotel-management-php
+          METHOD: ftp
+          PORT: ${{ secrets.FTP_PORT }}
+          ARGS: --delete --dry-run --verbose --exclude=.ftpquota --exclude=.git* .github* .git*/** node_modules/** node_modules/**/* export.bat import.bat database.sql package.json
