@@ -15,6 +15,6 @@ define("FTPSERVER", getenv("env_ftp_server"));
 define("FTPUSER", getenv("env_ftp_user"));
 define("FTPPASS", getenv("env_ftp_pass"));
 
-require(ROOT.DS."core".DS."db.php");
-require(ROOT.DS."core".DS."utils.php");
-require(ROOT.DS."core".DS."upload_image.php");
+require_once(ROOT.DS."core".DS."db.php");
+require_once(ROOT.DS."core".DS."utils.php");
+require_once(ROOT.DS."core".DS."upload_image.php");

@@ -192,10 +192,15 @@ a.nav-link {
   grid-template-columns: repeat(2, 1fr);
   border-top-left-radius: 30px;
   border-top-right-radius: 0px; }
-  .custom-room-cards .card-expanded .card-body img {
-    border-top-left-radius: 30px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: calc(15px); }
+  .custom-room-cards .card-expanded .basic {
+    display: flex;
+    flex-direction: column; }
+    .custom-room-cards .card-expanded .basic .card-body img {
+      border-top-left-radius: 30px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: calc(15px); }
+    .custom-room-cards .card-expanded .basic .card-footer {
+      height: 84px; }
   .custom-room-cards .card-expanded .detail {
     font-weight: bold;
     padding: 1.5em; }

@@ -27,9 +27,7 @@
           </thead>
           <tbody>
             <?php
-              $statement = $pdo->prepare("SELECT * FROM rooms");
-              $statement->execute();
-              $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+              $rows = getAllRooms($pdo);
 
               foreach ($rows as $row) {
                   if ($row["room_booked"] == 1) {
@@ -51,7 +49,7 @@
               <td><?= $row["room_beds"]." / ".$row["bed_type"] ?></td>
               <td><?= $row["room_capacity"] ?></td>
               <td>
-                <a href="" class="text-danger"> <span class="fa fa-trash"></span>&nbsp;</a>
+                <a href="delete_room.php?=<?= $row["room_id"]; ?>" class="text-danger"> <span class="fa fa-trash"></span>&nbsp;</a>
                 &nbsp;
                 /
                 &nbsp;

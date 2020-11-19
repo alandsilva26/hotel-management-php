@@ -66,11 +66,22 @@ $room-card-border-radius: 12px;
     border-top-left-radius: $room-card-border-radius;
     border-top-right-radius: 0px;
 
-    .card-body {
-      img {
-        border-top-left-radius: $room-card-border-radius;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: calc(#{$room-card-border-radius / 2});
+    .basic {
+      display: flex;
+      flex-direction: column;
+
+      .card-body {
+        // border: 1px solid red;
+        img {
+          border-top-left-radius: $room-card-border-radius;
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: calc(#{$room-card-border-radius / 2});
+        }
+      }
+
+      .card-footer {
+        // border: 1px solid blue;
+        height: 84px;
       }
     }
 
