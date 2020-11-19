@@ -1,3 +1,16 @@
+<?php
+require_once("./config.php");
+  if (isset($_POST["signup-user"])) {
+      $user_fname = $_POST["user_fname"];
+      $user_lname = $_POST["user_lname"];
+      $user_email = $_POST["user_email"];
+      $user_phone = $_POST["user_phone"];
+      $user_dob = $_POST["user_dob"];
+      $user_password = $_POST["user_password"];
+  }
+?>
+
+
 <?php include("./includes/header.php"); ?>
   <body>
     <!-- Form Section -->
@@ -24,12 +37,13 @@
               <!-- Part 1 of form -->
               <div class="part part-1">
                 <div class="form-group">
-                  <label for="phone-no">Phone number</label>
+                  <label for="user_phone">Phone number</label>
                   <input
                     type="tel"
-                    name="phone-no"
+                    name="user_phone"
+                    id="user_phone"
                     class="form-control"
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your 10 digit phone number"
                   />
                 </div>
 
@@ -48,30 +62,32 @@
               <!-- Part 2 of form -->
               <div class="part part-2">
                 <div class="form-group">
-                  <label for="fname">First name</label>
+                  <label for="user_fname">First name</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="fname"
+                    name="user_fname"
+                    id="user_fname"
                     placeholder="Enter your first name"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="lname">Last name</label>
+                  <label for="user_lname">Last name</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="lname"
+                    name="user_lname"
+                    id="user_lname"
                     placeholder="Enter your last name"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="dob">Date of birth</label>
+                  <label for="user_dob">Date of birth</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="dob"
-                    id="dob"
+                    name="user_dob"
+                    id="user_dob"
                     placeholder="Enter your birth date"
                   />
                 </div>
@@ -89,19 +105,21 @@
               <!-- Part 3 of form -->
               <div class="part part-3">
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="user_email">Email</label>
                   <input
-                    type="email"
-                    name="email"
+                    type="user_email"
+                    name="user_email"
+                    id="user_email"
                     placeholder="Enter your email"
                     class="form-control"
                   />
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>
+                  <label for="user_password">Password</label>
                   <input
-                    type="password"
-                    name="password"
+                    type="user_password"
+                    name="user_password"
+                    id="user_password"
                     placeholder="Enter your password"
                     class="form-control"
                   />
@@ -114,6 +132,7 @@
                     <button
                       type="submit"
                       name="signup-user"
+                      id="signup-user"
                       class="btn btn-primary"
                     >
                       Signup
@@ -146,14 +165,22 @@
         var d = new Date();
         var year = d.getFullYear();
         d.setFullYear(year);
-        $("#dob").datepicker({
+        $("#user_dob").datepicker({
           changeMonth: true,
           changeYear: true,
           yearRange: "1930:" + year + "",
           defaultDate: d,
         });
         $("nav").addClass("navbar-light");
+
+
+        $("#user_phone").val("7030218024");
+        $("#user_fname").val("Alan");
+        $("#user_lname").val("Dsilva");
+        $("#user_dob").val("26/04/2001");
+        $("#user_email").val("alandsilva2001@gmail.com");
       });
+      
     </script>
   </body>
 </html>

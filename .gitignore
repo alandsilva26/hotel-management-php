@@ -1,3 +1,6 @@
 node_modules/
 package-lock.json
 debug.log
+public/.htaccess
+public/admin/test.php
+public/admin/file.php

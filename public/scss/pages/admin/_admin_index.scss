@@ -3,4 +3,9 @@
     overflow-x: scroll;
     height: calc(100vh - #{$navbar-height} - #{$admin-pad});
   }
+
+  td,
+  th {
+    padding: 12px 6px;
+  }
 }

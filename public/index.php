@@ -1,4 +1,7 @@
-<?php include("./includes/header.php"); ?>
+<?php
+require_once("./config.php");
+include("./includes/header.php");
+?>
 <body>
   <header id="home-header">
     <div id="home-header--bg-image">

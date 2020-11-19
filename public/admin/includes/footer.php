@@ -18,5 +18,4 @@
 <script src="../js/handle-home-form.js"></script>
 <script src="../js/parallax.js"></script>
 <script src="../js/smooth-scroll.js"></script>
-</body>
-</html>
+
