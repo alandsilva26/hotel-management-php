@@ -3,6 +3,14 @@
   include("./includes/header.php");
 ?>
       <section class="content">
+      <div class="text-danger">
+      <?php
+        if (isset($_SESSION["error"])) {
+            echo $_SESSION["error"];
+            unset($_SESSION["error"]);
+        }
+        ?>
+      </div>
         <table
           id="dtVerticalScrollExample"
           class="table table-striped table-bordered small"
@@ -49,7 +57,7 @@
               <td><?= $row["room_beds"]." / ".$row["bed_type"] ?></td>
               <td><?= $row["room_capacity"] ?></td>
               <td>
-                <a href="delete_room.php?=<?= $row["room_id"]; ?>" class="text-danger"> <span class="fa fa-trash"></span>&nbsp;</a>
+                <a href="delete_room.php?room_id=<?= $row["room_id"]; ?>" class="text-danger"> <span class="fa fa-trash"></span>&nbsp;</a>
                 &nbsp;
                 /
                 &nbsp;

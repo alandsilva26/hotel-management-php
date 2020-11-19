@@ -8,7 +8,7 @@
       $room_floor = $_POST['room_floor'];
       $room_amenities = $_POST['amenities'];
       $room_beds = $_POST['room_beds'];
-      $room_capacity = $_POST['room_name'];
+      $room_capacity = $_POST['room_capacity'];
       $bed_type = $_POST['bed_type'];
       $room_price = $_POST['room_price'];
       $room_featured = $_POST['room_featured'] == "yes" ? 1 : 0;
