@@ -1,5 +1,9 @@
 <?php
 require_once("./config.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+      
   if (isset($_POST["signup-user"])) {
       $user_fname = $_POST["user_fname"];
       $user_lname = $_POST["user_lname"];
@@ -7,6 +11,66 @@ require_once("./config.php");
       $user_phone = $_POST["user_phone"];
       $user_dob = $_POST["user_dob"];
       $user_password = $_POST["user_password"];
+      $pwd_hash = password_hash($user_password, PASSWORD_DEFAULT);
+      $hash = md5(rand(0, 1000));
+
+
+
+      // INSERT DATA INTO TABLE
+      $sql = "INSERT INTO users (user_fname, user_lname, user_email, user_phone, user_dob, user_password, verification_hash) VALUES (:user_fname, :user_lname, :user_email, :user_phone, :user_dob, :user_password, :verification_hash)";
+
+      $statement = $pdo->prepare($sql);
+
+      $statement->execute(array(
+        ":user_fname" => $user_fname,
+        ":user_lname" => $user_lname,
+        ":user_email" => $user_email,
+        ":user_phone" => $user_phone,
+        ":user_dob" => $user_dob,
+        ":user_password" => $pwd_hash,
+        ":verification_hash" => $hash,
+        
+      ));
+
+
+  
+
+      
+      require '../vendor/autoload.php';
+      
+      $mail = new PHPMailer;
+      $mail->isSMTP();
+      $mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+      $mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
+      $mail->Port = 587; // TLS only
+      $mail->SMTPSecure = 'tls'; // ssl is depracated
+      $mail->SMTPAuth = true;
+      $mail->Username = "luciferssd11@gmail.com";
+      $mail->Password = "tgdwsmgvpwfyduoe";
+      $mail->setFrom("luciferssd11@gmail.com", "ansel");
+      $mail->addAddress($user_email, "aaron");
+      $mail->Subject = 'PHPMailer GMail SMTP test';
+      $mail->msgHTML(
+          "Thanks for signing up!
+      
+      Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+        
+      ------------------------
+      Username: '.$user_fname $user_lname.'
+      Password: '.$user_password.'
+      ------------------------
+        
+      Please click this link to activate your account:
+      http://www.yourwebsite.com/verify.php?email='.$user_email.'&hash='.$hash."
+      );
+      $mail->AltBody = 'HTML messaging not supported';
+      
+      
+      if (!$mail->send()) {
+          echo "Mailer Error: " . $mail->ErrorInfo;
+      } else {
+          header("Location: index.php");
+      }
   }
 ?>
 
@@ -166,6 +230,7 @@ require_once("./config.php");
         var year = d.getFullYear();
         d.setFullYear(year);
         $("#user_dob").datepicker({
+          dateFormat: "yy-mm-dd",
           changeMonth: true,
           changeYear: true,
           yearRange: "1930:" + year + "",
@@ -177,7 +242,7 @@ require_once("./config.php");
         $("#user_phone").val("7030218024");
         $("#user_fname").val("Alan");
         $("#user_lname").val("Dsilva");
-        $("#user_dob").val("26/04/2001");
+        $("#user_dob").val("2000/07/19");
         $("#user_email").val("alandsilva2001@gmail.com");
       });
       
