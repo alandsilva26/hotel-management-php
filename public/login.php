@@ -1,4 +1,6 @@
-<?php include("./includes/header.php"); ?>
+<?php require("./config.php");
+include("./includes/header.php");
+ ?>
   <body>
     <!-- Form Section -->
     <section id="auth-form">
@@ -25,7 +27,7 @@
             </div>
 
             <div class="group">
-              <img src="./media/logo/google.svg" alt="google logo" />
+              <!-- <img src="./media/logo/google.svg" alt="google logo" /> -->
               <button href="" class="btn">Sign in with google</button>
             </div>
 
@@ -36,6 +38,7 @@
                 <input
                   type="email"
                   name="email"
+                  id="email"
                   placeholder="Enter your email"
                   class="form-control"
                 />
@@ -49,6 +52,7 @@
                 <input
                   type="password"
                   name="password"
+                  id="password"
                   placeholder="Enter your password"
                   class="form-control"
                 />
@@ -70,12 +74,45 @@
         </div>
       </div>
     </section>
+<?php 
+if (isset($_POST['login-user'])) {
+    $password=$_POST['password'];
+    $email=$_POST['email'];
+    $sql = "SELECT user_email, user_password, user_verified FROM users WHERE user_email= :email";
+
+    $statement = $pdo->prepare($sql);
+    $statement->execute(array(":email" => $email));
+    $row= $statement->fetchall(PDO::FETCH_ASSOC);
+    $test = $row[0]["user_password"];
+    $user_password = password_verify($password,$test);
+    $verified = $row[0]['user_verified'];
+    if (!is_null($row)) {
+        $hash = $user_password;
+        if ($verified=='1') {
+            if ($user_password) {
+                echo "PASSWORD VERIFIED";
+            }else{
+              echo "PASSWORD NOT VERIFIED";
+            }
+        }else{
+          echo "USER NOT VERIFIED";
+        }
+    }else{
+      echo "User Email Not present in db";
+    }
+}
+
+
+
+?>
 
 <?php include("./includes/footer.php"); ?>
     <!-- Custom -->
     <script>
       $(document).ready(function () {
         $("nav").addClass("navbar-light");
+        $("#email").val("ansel20@gmail.com");
+        $("#password").val("ansel2000");
       });
     </script>
 
