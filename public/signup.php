@@ -47,7 +47,7 @@ use PHPMailer\PHPMailer\Exception;
       $mail->SMTPAuth = true;
       $mail->Username = "luciferssd11@gmail.com";
       $mail->Password = "tgdwsmgvpwfyduoe";
-      $mail->setFrom("luciferssd11@gmail.com", "ansel");
+      $mail->setFrom("luciferssd11@gmail.com", "Verification");
       $mail->addAddress($user_email, "aaron");
       $mail->Subject = 'PHPMailer GMail SMTP test';
       $mail->msgHTML(
