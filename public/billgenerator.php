@@ -76,22 +76,27 @@ if (isset($_POST["signup-user"])) {
     <tr>
       <td colspan="2" ><form method="POST">
  <div class="col">
-    <button class="btn btn-danger" name="submit" onclick="window.print()">Print</button>
-    <!-- <button class="btn btn-primary" name="cancel" onclick="window.location.href=''">Back</button> -->
-    <a href="./index.php" class="btn btn-primary">Back</a>
+    <button class="btn btn-danger" name="submit" id="printpagebutton" onclick="printpage()">Print</button>
+    <a href="./index.php" class="btn btn-primary" id="backpagebutton">Back</a>
 </div>
  </form></td>
     </tr>
     </tbody>
     </table>
     </div>
-    <!-- <form method="POST">
- <div class="row" style="margin-left: 15%;">
- <div class="col">
-    <button class="btn btn-danger" name="submit">Print</button>
-    <button class="btn btn-primary" name="cancel" style="margin-left: 15%;">Back</button>
-</div>
-</div>
- </form> -->
+    <script>
+    function printpage() {
+        //Get the print button and put it into a variable
+        var printButton = document.getElementById("printpagebutton");
+        var backButton= document.getElementById("backpagebutton");
+        //Set the print button visibility to 'hidden' 
+        printButton.style.visibility = 'hidden';
+        backButton.style.visibility = 'hidden';
+        //Print the page content
+        window.print()
+        printButton.style.visibility = 'visible';
+        backButton.style.visibility = 'visible';
+    }
+    </script>
     </body>
 </html>
