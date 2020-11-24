@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Reservation Form</title>
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-  </head>
+<?php
+require_once("./config.php");
+include("./includes/header.php");
+?>
+<body>
+  <header>
+      <?php include("./includes/navbar.php"); ?>
+  </header>
 
   <body>
     <style>
@@ -34,9 +23,9 @@
         transform: translateY(-50%);
       }
 
-      #booking {
-        font-family: "Montserrat", sans-serif;
-        background-image: url("https://img.freepik.com/free-photo/hammocks-with-palm-trees_1203-201.jpg?size=626&ext=jpg&ga=GA1.2.271093930.1603238400");
+      #booking::after {
+        /* font-family: "Montserrat", sans-serif; */
+        background-image: url("home-header-1.jpg") no-repeat;
         background-size: cover;
         background-position: center;
       }
@@ -175,13 +164,14 @@
             </div>
             <div class="col-md-4 col-md-pull-7">
               <div class="booking-form">
-                <form>
+                <form method="POST" action="bill_view.php">
                   <div class="form-group">
-                    <span class="form-label">Enter your Name</span>
+                    <span class="form-label">Enter User I.D.</span>
                     <input
                       class="form-control"
                       type="text"
-                      placeholder="Enter your name"
+                      name="user_id"
+                      placeholder="Enter your user I.D."
                       required
                     />
                   </div>
@@ -190,13 +180,14 @@
                     <input
                       class="form-control"
                       type="number"
+                      name="phone_number"
                       placeholder="Enter your phone number"
                       required
                     />
                   </div>
                   <div class="form-group">
                     <span class="form-label">Room Type</span>
-                    <select class="form-control" required>
+                    <select class="form-control" name="Room_Type" required>
                       <option value="">Select</option>
                       <option value="AC">classic Double room</option>
                       <option value="AC">classic Double room</option>
@@ -208,7 +199,7 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">Check In</span>
-                        <input class="form-control" type="date" required />
+                        <input class="form-control" name="check_in_date" type="date" required />
                       </div>
                     </div>
                     <div class="col-sm-6">
@@ -219,7 +210,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-sm-4">
+                    <!-- <div class="col-sm-4">
                       <div class="form-group">
                         <span class="form-label">Rooms</span>
                         <select class="form-control" required>
@@ -229,11 +220,11 @@
                         </select>
                         <span class="select-arrow"></span>
                       </div>
-                    </div>
-                    <div class="col-sm-4">
+                    </div> -->
+                    <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">Adults</span>
-                        <select class="form-control" required>
+                        <select class="form-control" name="no_adults" required>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -241,10 +232,10 @@
                         <span class="select-arrow"></span>
                       </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                       <div class="form-group">
                         <span class="form-label">Children</span>
-                        <select class="form-control" required>
+                        <select class="form-control" name="no_children" required>
                           <option>0</option>
                           <option>1</option>
                           <option>2</option>
@@ -254,7 +245,7 @@
                     </div>
                   </div>
                   <div class="form-btn">
-                    <button class="submit-btn">Confirm Booking</button>
+                    <button class="submit-btn" name="confirm_booking">Confirm Booking</button>
                   </div>
                 </form>
               </div>
