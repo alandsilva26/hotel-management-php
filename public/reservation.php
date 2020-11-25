@@ -61,7 +61,7 @@ include("./config.php");
                   <div class="col-sm-6">
                      <div class="form-group">
                         <span class="form-label">Check out</span>
-                        <input class="form-control" type="date" required />
+                        <input class="form-control" name="check_out_date" type="date" required />
                      </div>
                   </div>
                </div>
