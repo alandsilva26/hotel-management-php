@@ -1,80 +1,6 @@
 <?php
-require_once("./config.php");
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-      
-  if (isset($_POST["signup-user"])) {
-      $user_fname = $_POST["user_fname"];
-      $user_lname = $_POST["user_lname"];
-      $user_email = $_POST["user_email"];
-      $user_phone = $_POST["user_phone"];
-      $user_dob = $_POST["user_dob"];
-      $user_password = $_POST["user_password"];
-      $pwd_hash = password_hash($user_password, PASSWORD_DEFAULT);
-      $hash = md5(rand(0, 1000));
-
-
-
-      // INSERT DATA INTO TABLE
-      $sql = "INSERT INTO users (user_fname, user_lname, user_email, user_phone, user_dob, user_password, verification_hash) VALUES (:user_fname, :user_lname, :user_email, :user_phone, :user_dob, :user_password, :verification_hash)";
-
-      $statement = $pdo->prepare($sql);
-
-      $statement->execute(array(
-        ":user_fname" => $user_fname,
-        ":user_lname" => $user_lname,
-        ":user_email" => $user_email,
-        ":user_phone" => $user_phone,
-        ":user_dob" => $user_dob,
-        ":user_password" => $pwd_hash,
-        ":verification_hash" => $hash,
-        
-      ));
-
-
-  
-
-      
-      require '../vendor/autoload.php';
-      
-      $mail = new PHPMailer;
-      $mail->isSMTP();
-      $mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
-      $mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
-      $mail->Port = 587; // TLS only
-      $mail->SMTPSecure = 'tls'; // ssl is depracated
-      $mail->SMTPAuth = true;
-      $mail->Username = "luciferssd11@gmail.com";
-      $mail->Password = "tgdwsmgvpwfyduoe";
-      $mail->setFrom("luciferssd11@gmail.com", "ansel");
-      $mail->addAddress($user_email, "aaron");
-      $mail->Subject = 'PHPMailer GMail SMTP test';
-      $mail->msgHTML(
-          "Thanks for signing up!
-      
-      Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-        
-      ------------------------
-      Username: '.$user_fname $user_lname.'
-      Password: '.$user_password.'
-      ------------------------
-        
-      Please click this link to activate your account:
-      http://www.yourwebsite.com/verify.php?email='.$user_email.'&hash='.$hash."
-      );
-      $mail->AltBody = 'HTML messaging not supported';
-      
-      
-      if (!$mail->send()) {
-          echo "Mailer Error: " . $mail->ErrorInfo;
-      } else {
-          header("Location: index.php");
-      }
-  }
+  require_once("./config.php");
 ?>
-
-
 <?php include("./includes/header.php"); ?>
   <body>
     <!-- Form Section -->
@@ -97,7 +23,7 @@ use PHPMailer\PHPMailer\Exception;
         <div class="form-wrapper">
           <div class="form-card">
             <h2>Sign up</h2>
-            <form action="" method="post" class="form">
+            <form action="" id="signup_user" method="post" class="form">
               <!-- Part 1 of form -->
               <div class="part part-1">
                 <div class="form-group">
@@ -181,12 +107,13 @@ use PHPMailer\PHPMailer\Exception;
                 <div class="form-group">
                   <label for="user_password">Password</label>
                   <input
-                    type="user_password"
+                    type="password"
                     name="user_password"
                     id="user_password"
                     placeholder="Enter your password"
                     class="form-control"
                   />
+                  <small id="user_password_error" class="error-message text-danger"></small>
                 </div>
 
                 <!-- Step 3 buttons -->
@@ -210,7 +137,7 @@ use PHPMailer\PHPMailer\Exception;
               <div class="alternate-auth">
                 <span>
                   Already have an account?
-                  <a href="./login.html">&nbsp;Login here</a>
+                  <a href="./login.php">&nbsp;Login here</a>
                 </span>
               </div>
             </form>
@@ -244,6 +171,52 @@ use PHPMailer\PHPMailer\Exception;
         $("#user_lname").val("Dsilva");
         $("#user_dob").val("2000/07/19");
         $("#user_email").val("alandsilva2001@gmail.com");
+        $("#user_password").val("alan");
+
+        
+      function handleError(about, message) {
+        console.log("IN ERROR");
+        $(`#${about}`).addClass("is-invalid");
+        $(`#${about}_error`).html("<span>"+message+"</span>");
+      }
+
+        // Login user
+        $("#signup_user").submit(function (e) {
+          $(".error-message").html("");
+          $(".form-control").removeClass("is-invalid");
+          $("#signup-user").html("Signing you in...");
+
+          e.preventDefault();
+          var formData = new FormData(this);
+
+          $.ajax({
+            url: "core/signup_user.php",
+            type: "POST",
+            data: formData,
+            success: function (data) {
+              console.log("SUCCESS");
+              console.log(data);
+              if (data.error == 1) {
+                console.log(data.error);
+                handleError(data.about, data.message);
+                $("#signup-user").html("Sign up");
+              } else {
+                $("#signup-user").html("Signed up");
+                window.location.href="verify_user.php";
+                // return;
+              }
+
+            },
+            error: function (data, message, errorThrown) {
+              console.log("ERROR" + errorThrown + message);
+              // $("#error-form").html("<span class=\"p-2\">" + message + errorThrown + "</span>");
+              $("#signup-user").html("Sign up");
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+          });
+        });
       });
       
     </script>
