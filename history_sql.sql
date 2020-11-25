@@ -22,3 +22,16 @@ CREATE TABLE `hotel`.`users` ( `user_id` INT NOT NULL AUTO_INCREMENT , `user_ema
 ALTER TABLE `users` ADD `verification_hash` VARCHAR(500) NOT NULL AFTER `user_verified`;
 
 ALTER TABLE `users` ADD `user_phone` VARCHAR(15) NOT NULL AFTER `user_dob`;
+
+CREATE TABLE IF NOT EXISTS reservations (
+    reservation_id	INTEGER NOT NUll AUTO_INCREMENT PRIMARY KEY,
+    user_id	INTEGER(11),
+    room_id	INTEGER,
+    booking_date DATE,
+    no_adults INTEGER,
+    no_children	INTEGER,
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY(room_id) REFERENCES rooms(room_id) ON DELETE CASCADE
+)
+
+ALTER TABLE `reservations` ADD `reservation_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `no_children`;

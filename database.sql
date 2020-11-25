@@ -24,7 +24,17 @@ DROP TABLE IF EXISTS `reservations`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reservations` (
   `reservation_id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`reservation_id`)
+  `user_id` int(11) DEFAULT NULL,
+  `room_id` int(11) DEFAULT NULL,
+  `booking_date` date DEFAULT NULL,
+  `no_adults` int(11) DEFAULT NULL,
+  `no_children` int(11) DEFAULT NULL,
+  `reservation_created` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`reservation_id`),
+  KEY `user_id` (`user_id`),
+  KEY `room_id` (`room_id`),
+  CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -118,4 +128,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-25  9:51:10
+-- Dump completed on 2020-11-25 10:09:29
