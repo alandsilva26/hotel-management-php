@@ -23,10 +23,12 @@ function uploadImage($nameOfField)
         ftp_pasv($conn_id, true);
 
         // check connection
-        if ((!$conn_id) || (!$login_result)) {
+        if (($conn_id) || (!$login_result)) {
             $msg = "FTP connection has failed!". " Attempted to connect to $ftp_server for user $ftp_user_name";
+            $status = 1;
         } else {
             $msg = "Connected to $ftp_server, for user $ftp_user_name";
+            $status = 0;
         }
 
         $destination_file = "/htdocs/remote-image-storage/media/".$_FILES[$nameOfField]['name'];
@@ -38,10 +40,10 @@ function uploadImage($nameOfField)
         // check upload status
         if (!$upload) {
             $msg = "FTP upload has failed!";
-            $status = 0;
+            $status = 1;
         } else {
             $msg = "Uploaded $source_file to $ftp_server as $destination_file";
-            $status = 1;
+            $status = 0;
         }
 
         // close the FTP stream

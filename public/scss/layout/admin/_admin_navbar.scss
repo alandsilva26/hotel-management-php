@@ -18,7 +18,7 @@
     }
   }
 
-  @media screen and (min-width: $breakpoint-mobile) {
+  @media screen and (min-width: $breakpoint-tablet) {
     .side-nav {
       position: fixed;
       top: $navbar-height;

@@ -98,6 +98,16 @@
             color: black;
           }
 
+          .form-control.is-invalid {
+            margin-bottom: 0.5em;
+          }
+
+          small {
+            span {
+              margin: 0px 20px;
+            }
+          }
+
           .form-control:focus {
             border: 3px solid $red-gradient-1;
             box-shadow: none;

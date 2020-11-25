@@ -2,4 +2,32 @@
   .table-red {
     background: rgba(255, 0, 0, 0.08);
   }
+
+  .table-green {
+    background: rgba(0, 255, 0, 0.08);
+  }
+
+  #form-image {
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  // #new_room_image {
+  //   display: inline;
+  //   width: 50%;
+  // }
+
+  .td-img {
+    width: 100px;
+    padding: 0;
+  }
+
+  .table-img {
+    display: block;
+    width: 100px;
+    height: 50px;
+    object-fit: cover;
+  }
 }

@@ -93,5 +93,15 @@ include("./includes/header.php");
       </div>
     </div>
     <?php include("./includes/footer.php"); ?>
+    <script>
+         $(document).ready(function() {
+        $("nav").eq(0).addClass("bg-dark");
+        $("nav").eq(0).addClass("navbar-dark");
+
+        $("footer").eq(0).addClass("bg-dark");
+        $("footer").eq(0).addClass("text-light");
+        // bg-dark navbar-dark 
+    });
+    </script>
 </body>
 </html>

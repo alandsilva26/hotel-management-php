@@ -4,6 +4,10 @@ $(document).ready(function () {
   // Display part 1 on page load
   $(".part-1").show();
 
+  // $(".part-1").hide();
+  // $(".part-2").hide();
+  // $(".part-3").show();
+
   // Proceed to part 2
   $("#proceed-part-2").click(function (event) {
     event.preventDefault();
@@ -20,6 +24,7 @@ $(document).ready(function () {
     $(".part-3").show(600);
     $(".form-progress-item:eq(2)").addClass("complete");
   });
+
 
   // Cancel Sign up go home
 

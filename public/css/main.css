@@ -11,6 +11,10 @@ body {
   margin-left: 200px;
   width: calc(100vw - 200px);
   padding: 0px; }
+  @media screen and (max-width: 768px) {
+    #admin-main {
+      margin-left: 0;
+      width: 100vw; } }
 
 .section-title h2 {
   font-size: 3em;
@@ -98,6 +102,10 @@ a.nav-link {
         font-size: large;
         font-weight: bold;
         color: black; }
+      .auth--wrapper .form-wrapper .form-card .form .form-group .form-control.is-invalid {
+        margin-bottom: 0.5em; }
+      .auth--wrapper .form-wrapper .form-card .form .form-group small span {
+        margin: 0px 20px; }
       .auth--wrapper .form-wrapper .form-card .form .form-group .form-control:focus {
         border: 3px solid #be0854;
         box-shadow: none; }
@@ -221,7 +229,7 @@ a.nav-link {
   #admin-header .navbar .navbar-collapse {
     padding: 0.5em; }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
   #admin-header .side-nav {
     position: fixed;
     top: 58px;
@@ -473,16 +481,106 @@ a.nav-link {
 .row > div {
   margin-bottom: 1em; }
 
+#verify-user {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); }
+  #verify-user .wrapper {
+    height: calc(100vh - 58px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  #verify-user #verify-user--bg-image {
+    background-image: url("../media/images/backgrounds/pool.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  #verify-user .container {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
+    border-radius: 2em; }
+
 #admin-main section.content {
   overflow-x: scroll;
   height: calc(100vh - 58px - 0px); }
+
+#admin-main section.charts-section {
+  background: #f5f5f5; }
 
 #admin-main td,
 #admin-main th {
   padding: 12px 6px; }
 
+#admin-main #account-welcome .card {
+  border: none; }
+  #admin-main #account-welcome .card .card-header {
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7); }
+    #admin-main #account-welcome .card .card-header h2 span {
+      color: black;
+      font-weight: bold; }
+
+#admin-main #count .card {
+  font-size: 1em; }
+  #admin-main #count .card.card-red {
+    background: rgba(255, 99, 132, 0.2); }
+  #admin-main #count .card.card-blue {
+    background: rgba(54, 162, 235, 0.2); }
+  #admin-main #count .card.card-green {
+    background: rgba(75, 192, 192, 0.2); }
+  #admin-main #count .card .card-header {
+    border: none; }
+  #admin-main #count .card .count {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(23, 1, 27, 0.8); }
+    #admin-main #count .card .count .icon .fa {
+      font-size: 4em; }
+    #admin-main #count .card .count .info {
+      font-weight: bold; }
+      #admin-main #count .card .count .info div {
+        text-align: end; }
+      #admin-main #count .card .count .info .number {
+        font-size: 1.7em; }
+      #admin-main #count .card .count .info .label {
+        color: #17011b;
+        font-size: 1.1em; }
+  #admin-main #count .card:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07); }
+
+#admin-main #graphs .card {
+  border: none; }
+  #admin-main #graphs .card .card-header {
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8); }
+
 #admin-main .table-red {
   background: rgba(255, 0, 0, 0.08); }
+
+#admin-main .table-green {
+  background: rgba(0, 255, 0, 0.08); }
+
+#admin-main #form-image {
+  display: block;
+  width: 100%;
+  height: 100px;
+  object-fit: cover; }
+
+#admin-main .td-img {
+  width: 100px;
+  padding: 0; }
+
+#admin-main .table-img {
+  display: block;
+  width: 100px;
+  height: 50px;
+  object-fit: cover; }
 
 #ui-datepicker-div {
   padding: 2em !important;

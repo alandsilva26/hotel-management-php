@@ -6,5 +6,10 @@ $(document).ready(function () {
       "background-position-y",
       `${offset * 0.2}px`
     );
+
+    // $("#verify-user--bg-image").css(
+    //   "background-position-y",
+    //   `${offset * 0.2}px`
+    // );
   });
 });

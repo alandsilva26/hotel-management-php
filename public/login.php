@@ -1,6 +1,15 @@
-<?php require("./config.php");
-include("./includes/header.php");
- ?>
+<?php
+include("./config.php");
+
+// Check if user is already logged in
+
+if (isLoggedIn()) {
+    header("Location: index.php");
+    return;
+}
+?>
+
+<?php include("./includes/header.php"); ?>
   <body>
     <!-- Form Section -->
     <section id="auth-form">
@@ -27,38 +36,39 @@ include("./includes/header.php");
             </div>
 
             <div class="group">
-              <!-- <img src="./media/logo/google.svg" alt="google logo" /> -->
+              <img src="./media/logo/google.svg" alt="google logo" />
               <button href="" class="btn">Sign in with google</button>
             </div>
 
             <h5><span class="small">or sign in with email</span></h5>
-            <form action="" method="post" class="form">
+            <form action="" id="login_user" method="post" class="form">
               <div class="form-group">
                 <label for="email">Email</label>
                 <input
-                  type="email"
-                  name="email"
-                  id="email"
+                  type="text"
+                  name="user_email"
+                  id="user_email"
                   placeholder="Enter your email"
                   class="form-control"
                 />
-                <!-- is-invalid add this class along with form-control -->
-                <!-- <small id="passwordHelp" class="text-danger">
-                  Must be 8-20 characters long.
-                </small> -->
+                <small id="user_email_error" class="error-message text-danger">
+                  
+              </small>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
                 <input
                   type="password"
-                  name="password"
-                  id="password"
+                  name="user_password"
+                  id="user_password"
                   placeholder="Enter your password"
                   class="form-control"
                 />
+                <small id="user_password_error" class="error-message text-danger">
+              </small>
               </div>
               <div class="form-group">
-                <button type="submit" name="login-user" class="btn">
+                <button type="submit" id="login-user-btn" name="login-user" class="btn">
                   Log in
                 </button>
               </div>
@@ -66,7 +76,7 @@ include("./includes/header.php");
               <div class="alternate-auth">
                 <span>
                   Don't have an account?
-                  <a href="./signup.html">&nbsp;Sign up instead</a>
+                  <a href="./signup.php">&nbsp;Sign up instead</a>
                 </span>
               </div>
             </form>
@@ -74,47 +84,53 @@ include("./includes/header.php");
         </div>
       </div>
     </section>
-<?php 
-if (isset($_POST['login-user'])) {
-    $password=$_POST['password'];
-    $email=$_POST['email'];
-    $sql = "SELECT user_email, user_password, user_verified FROM users WHERE user_email= :email";
 
-    $statement = $pdo->prepare($sql);
-    $statement->execute(array(":email" => $email));
-    $row= $statement->fetchall(PDO::FETCH_ASSOC);
-    $test = $row[0]["user_password"];
-    $user_password = password_verify($password,$test);
-    $verified = $row[0]['user_verified'];
-    if (!is_null($row)) {
-        $hash = $user_password;
-        if ($verified=='1') {
-            if ($user_password) {
-                echo "PASSWORD VERIFIED";
-            }else{
-              echo "PASSWORD NOT VERIFIED";
-            }
-        }else{
-          echo "USER NOT VERIFIED";
-        }
-    }else{
-      echo "User Email Not present in db";
-    }
-}
-
-
-
-?>
 
 <?php include("./includes/footer.php"); ?>
     <!-- Custom -->
-    <script>
-      $(document).ready(function () {
-        $("nav").addClass("navbar-light");
-        $("#email").val("ansel20@gmail.com");
-        $("#password").val("ansel2000");
+  <script>
+    $(document).ready(function () {
+    $("nav").addClass("navbar-light");
+    $("#user_email").val("alandsilva2001@gmail.com");
+    $("#user_password").val("alan");
+
+    function handleError(about, message) {
+      $(`#${about}`).addClass("is-invalid");
+      $(`#${about}_error`).html("<span>"+message+"</span>");
+    }
+
+    // Login user
+    $("#login_user").submit(function (e) {
+      $(".error-message").html("");
+      $(".form-control").removeClass("is-invalid");
+      $("#login-user-btn").html("Loggin you in...");
+
+      e.preventDefault();
+      var formData = new FormData(this);
+
+      $.ajax({
+        url: "core/login_user.php",
+        type: "POST",
+        data: formData,
+        success: function (data) {
+          if (data.error == 1) {
+            handleError(data.about, data.message);
+            $("#login-user-btn").html("Log in");
+          } else {
+            window.location.href="verify_user.php";
+            return;
+          }
+        },
+        error: function (data, message, errorThrown) {
+          // $("#error-form").html("<span class=\"p-2\">" + message + errorThrown + "</span>");
+        },
+        cache: false,
+        contentType: false,
+        processData: false
       });
-    </script>
+    });
+  });
+  </script>
 
 </body>
 </html>

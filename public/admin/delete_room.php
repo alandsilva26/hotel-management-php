@@ -60,8 +60,8 @@
       <td><?=$row['room_price']==1? 'Yes': 'No';?></td>
     </tr>
 <?php
-if($row['room_booked']==1){
-?>
+if ($row['room_booked']==1) {
+    ?>
       <tr>
       <td >Check In Data</td>
       <td><?=$row['check_in_date']?></td>
@@ -71,7 +71,7 @@ if($row['room_booked']==1){
       <td><?=$row['check_out_date']?></td>
     </tr>
 <?php
-    }
+}
 ?>
     <tr>
       <td >Room Floor</td>
@@ -104,26 +104,26 @@ if($row['room_booked']==1){
  <form method="POST">
  <div class="row" style="margin-left: 15%;">
  <div class="col">
-    <button class="btn btn-danger" name="submit">Submit</button>
-</div>
-<div class="col">
     <button class="btn btn-primary" name="cancel" style="margin-left: 15%;">Cancel</button>
+</div>
+ <div class="col">
+    <button class="btn btn-danger" name="submit">Submit</button>
 </div>
 </div>
  </form>   
 
 <?php
       // print("<pre>".print_r($row, true)."</pre>");
-      if(isset($_POST["submit"])){
-        $room_number=$row['room_number'];
-        $sql = "DELETE FROM rooms WHERE room_number = $room_number LIMIT 1;";
-        $statement = $pdo->prepare($sql);
-        $statement->execute();
-        header("Location: rooms.php");
-        die();
+      if (isset($_POST["submit"])) {
+          $room_number=$row['room_number'];
+          $sql = "DELETE FROM rooms WHERE room_number = $room_number LIMIT 1;";
+          $statement = $pdo->prepare($sql);
+          $statement->execute();
+          header("Location: rooms.php");
+          die();
       }
-      if(isset($_POST["cancel"])){
-        header("Location: rooms.php");
+      if (isset($_POST["cancel"])) {
+          header("Location: rooms.php");
       }
       ob_end_flush();
 ?>

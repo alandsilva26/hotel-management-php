@@ -20,7 +20,7 @@
         <a class="nav-link" href="<?php echo SROOT."/public/rooms.php"; ?>">Rooms</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo SROOT."/public/index.php#reservation-form"; ?>"
+        <a class="nav-link" href="<?php echo SROOT."/public/reservation.php"; ?>"
           >Reservations</a
           >
       </li>
@@ -34,22 +34,47 @@
           aria-haspopup="true"
           aria-expanded="false"
           >
-        Account
+          <i class="fa fa-user-circle-o"></i>&nbsp;
+          <?php
+            if (isLoggedIn()) {
+                echo $_SESSION["user_fname"];
+            } else {
+                echo "Account";
+            } ?>
         </a>
         <div
           class="dropdown-menu dropdown-menu-right"
           aria-labelledby="navbarDropdown"
           >
+          <?php
+            if (isLoggedIn()) {
+                ?>
           <span class="dropdown-item"
-            >Signed in as <b>lemon potter</b></span
-            >
+            >Signed in as <b><?= $_SESSION["user_fname"]." ".$_SESSION["user_lname"]; ?></b></span
+          >
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="<?php echo SROOT."/public/admin/index.php"; ?>">Admin</a>
-          <a class="dropdown-item" href="<?php echo SROOT."/public/login.php"; ?>">Log in</a>
-          <a class="dropdown-item" href="<?php echo SROOT."/public/signup.php"; ?>">Sign up</a>
-          <a class="dropdown-item" href="<?php echo SROOT."/public/accounts.php"; ?>">Account</a>
+            <?php
+            }
+            ?>
+            <?php if (isLoggedIn() &&  isAdmin($pdo) == true) {?>
+              <a class="dropdown-item" href="<?php echo SROOT."/public/admin/index.php"; ?>"><i class="fa fa-lock"></i>&nbsp;&nbsp;Admin</a>
+            <?php } ?>
+          <?php
+            if (!isLoggedIn()) {
+                ?>
+          <a class="dropdown-item" href="<?php echo SROOT."/public/login.php"; ?>"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;Log in</a>
+          <a class="dropdown-item" href="<?php echo SROOT."/public/signup.php"; ?>"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Sign up</a>
+            <?php
+            } ?>
+          <a class="dropdown-item" href="<?php echo SROOT."/public/accounts.php"; ?>"><i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Account</a>
+          <?php
+            if (isLoggedIn()) {
+                ?>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="./core/logout_user.php"><i class="fa fa-sign-out"></i>&nbsp;&nbsp;Logout</a>
+          <?php
+            }
+          ?>
         </div>
       </li>
     </ul>

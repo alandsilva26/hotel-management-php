@@ -32,12 +32,14 @@
       rel="stylesheet"
     />
 
+    <link href="<?php echo SROOT."/vendor/fullcalender/main.min.css"; ?>" rel="stylesheet" />
+
     <title>Hotel management</title>
   </head>
   <body class="admin">
 <header id="admin-header">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="<?php echo "//".SROOT ?>">Navbar</a>
+    <a class="navbar-brand" href="<?php echo SROOT."/admin/index.php"; ?>">Navbar</a>
     <button
         class="navbar-toggler"
         type="button"
@@ -56,7 +58,7 @@
     >
         <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a href="../index.html" class="nav-link">Back to website</a>
+            <a href="<?php echo SROOT."/index.php"; ?>" class="nav-link">Back to website</a>
         </li>
         <li class="nav-item dropdown">
             <a
@@ -95,10 +97,10 @@
             <a class="nav-link" href="<?php echo SROOT."/admin/add_room.php"; ?>">Add new Room</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./rooms.html">Reservations</a>
+            <a class="nav-link" href="<?php echo SROOT."/admin/reservation.php"; ?>">Reservations</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./rooms.html">Users</a>
+            <a class="nav-link" href="./users.php">Users</a>
         </li>
         </ul>
     </div>

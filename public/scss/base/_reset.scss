@@ -13,6 +13,13 @@ body {
   margin-left: $side-nav-width;
   width: calc(100vw - #{$side-nav-width});
   padding: $admin-pad;
+  // border: 5px solid red;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    // border: 5px solid blue;
+    margin-left: 0;
+    width: 100vw;
+  }
 }
 
 // $color: white;
