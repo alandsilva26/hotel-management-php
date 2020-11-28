@@ -17,14 +17,15 @@ if (isset($_POST['confirm_booking'])) {
     $no_children=$_POST["no_children"];
     $capacity=$no_adults+$no_children;
     $date=date("d-m-Y", time());
+    
     $sql1="SELECT room_id from rooms where room_booked = 0 and room_type = \"$room_type\" and room_capacity>=$capacity LIMIT 1";
+    
     $statement = $pdo->prepare($sql1);
     $statement->execute();
     $row = $statement->fetch(PDO::FETCH_ASSOC);
-    print_r($row);
     $room_id=$row['room_id'];
     $date_diff=abs($check_out_date-$check_in_date);
-    echo $date_diff;
+    
 
     $sql2=" START TRANSACTION;
         INSERT INTO reservations(user_id, room_id, booking_date, no_adults, no_children) VALUES (\"$user_id\",$room_id,$date,$no_adults,$no_children);

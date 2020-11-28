@@ -6,20 +6,30 @@
 <body>
 
 
-<div class="container">
+<div class="container mt-5" >
     <div class="row">
         <div class="col-xs-12 col-md-4 offset-md-4">
-            <div class="card ">
+            <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <h3 class="text-xs-center">Payment Details</h3>
                         <img class="img-fluid cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
                     </div>
                 </div>
-                <div class="card-block">
+                <div class="card-body">
                     <form role="form">
-                        <div class="row">
-                            <div class="col-xs-12">
+                    <div class="flex-row">
+                            <div class="col-xs-12 ">
+                                <div class="form-group">
+                                    <label>Amount</label>
+                                    <div>
+                                        <h2><b>$ 500</b><h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row">
+                            <div class="col-xs-12 ">
                                 <div class="form-group">
                                     <label>CARD NUMBER</label>
                                     <div class="input-group">
@@ -43,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="flex-row">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>CARD OWNER</label>
@@ -54,7 +64,7 @@
                     </form>
                 </div>
                 <div class="card-footer">
-                    <div class="row">
+                    <div class="flex-row">
                         <div class="col-xs-12">
                             <button class="btn btn-warning btn-lg btn-block">Process payment</button>
                         </div>
