@@ -6,7 +6,7 @@ if (isset($_POST['confirm_booking'])) {
     $ph_number=$_POST["phone_number"];
     $check_in_date = $_POST["check_in_date"];
     $check_out_date = $_POST["check_out_date"];
-    $no_adults=$_POST["no_adult"];
+    $no_adults=$_POST["no_adults"];
     $no_children=$_POST["no_children"];
 
     $mpdf = new \Mpdf\Mpdf();
