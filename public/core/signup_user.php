@@ -36,7 +36,8 @@
 
     mailUser($user_email, $hash);
 
-
+    
+    $_SESSION["user_id"] = $pdo->lastInsertId();
     $_SESSION["user_email"] = $user_email;
     $_SESSION["user_fname"] = $user_fname;
     $_SESSION["user_lname"] = $user_lname;
