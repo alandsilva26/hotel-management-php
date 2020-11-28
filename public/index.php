@@ -63,6 +63,7 @@ include("./includes/header.php");
                     type="number"
                     class="form-control"
                     name="count-adults"
+                    id="count-adults"
                     placeholder="Ages 13 or above"
                     />
                 </div>
@@ -72,6 +73,7 @@ include("./includes/header.php");
                     type="number"
                     class="form-control"
                     name="count-children"
+                    id="count-children"
                     placeholder="Ages 1-12"
                     />
                 </div>
@@ -265,5 +267,20 @@ include("./includes/header.php");
     </section>
   </main>
   <?php include("./includes/footer.php"); ?>
+  <script>
+    $(document).ready(function () {
+      $("#find-available-rooms-form").submit(function () {
+        event.preventDefault();
+        var indate = $("#check-in").val();
+        var outdate = $("#check-out").val();
+        var adults = $("#count-adults").val();
+        var children = $("#count-children").val();
+        console.log(children);
+        if(indate != "" && indate != null && children != null && children != "") {
+          window.location.href=`reservation.php?check_in_date=${indate}&check_out_date=${outdate}&adults=${adults}&children=${children}`;
+        }
+      });
+    });
+  </script>
 </body>
 </html>

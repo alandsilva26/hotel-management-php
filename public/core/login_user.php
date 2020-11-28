@@ -25,7 +25,7 @@ if ($row == false) {
 }
 
 // Verify if password is right
-$sql = "SELECT user_email, user_fname, user_lname, user_password, user_verified FROM users WHERE user_email = :user_email AND user_password = :user_password";
+$sql = "SELECT user_id, user_email, user_fname, user_lname, user_password, user_verified FROM users WHERE user_email = :user_email AND user_password = :user_password";
 $statement = $pdo->prepare($sql);
 $statement->execute(array(
     ":user_email" => $user_email,
@@ -45,6 +45,7 @@ $user_lname = $row["user_lname"];
 //     return;
 // }
 
+$_SESSION["user_id"] = $row["user_id"];
 $_SESSION["user_email"] = $user_email;
 $_SESSION["user_fname"] = $user_fname;
 $_SESSION["user_lname"] = $user_lname;
