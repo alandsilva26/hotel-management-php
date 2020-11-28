@@ -1,6 +1,5 @@
 <?php
 include("./config.php");
-
 // Check if user is already logged in
 ?>
 
@@ -43,12 +42,12 @@ include("./config.php");
                </div>
                <div class="form-group">
                   <span class="form-label">Room Type</span>
-                  <select class="form-control" name="Room_Type" required>
+                  <select class="form-control" name="room_type" required>
                      <option value="">Select</option>
-                     <option value="AC">classic Double room</option>
-                     <option value="AC">classic Double room</option>
-                     <option value="AC">classic Double room</option>
-                     <option value="AC">classic Double room</option>
+                     <option value="classic Double room">classic Double room</option>
+                     <option value="classic Double room">classic Double room</option>
+                     <option value="classic Double room">classic Double room</option>
+                     <option value="classic Double room">classic Double room</option>
                   </select>
                </div>
                <div class="row">

@@ -19,6 +19,7 @@
 -- Table structure for table `reservations`
 --
 
+
 DROP TABLE IF EXISTS `reservations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -129,3 +130,21 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-11-25 10:09:29
+--
+-- Table structure for table `payment`
+--
+
+DROP TABLE IF EXISTS `payment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `payment`(
+  `payment_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `reservation_id` int(11) NOT NULL,
+  `currency` varchar(5) DEFAULT 'INR',
+  `method` varchar(10) DEFAULT 'card',
+  `amount` int(11), 
+  CONSTRAINT `payment_idfk_1` FOREIGN KEY(`reservation_id`) REFERENCES `reservations`(`reservation_id`) ON DELETE CASCADE,
+  CONSTRAINT `payment_idfk_2` FOREIGN KEY(`user_id`) REFERENCES `users`(`user_id`) ON DELETE CASCADE
+)
+
