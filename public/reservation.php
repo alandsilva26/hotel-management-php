@@ -19,7 +19,7 @@ include("./config.php");
                 </p>
          </div>
          <div class="col-md-7">
-            <form method="POST" action="bill_view.php">
+            <form method="POST" action="payment.php">
                <div class="form-group">
                   <span class="form-label">Enter User I.D.</span>
                   <input
