@@ -29,18 +29,6 @@ if (isset($_GET["check_in_date"])) {
                 </p>
          </div>
          <div class="col-md-7">
-            <form method="POST" action="payment.php">
-               <div class="form-group">
-                  <span class="form-label">Enter User I.D.</span>
-                  <input
-                     class="form-control"
-                     type="text"
-                     name="user_id"
-                     placeholder="Enter your user I.D."
-                     required
-                     />
-               </div>
-               <div class="col-md-7">
                   <form method="POST" action="" id="reservation_details">
                      <div class="row">
                         <div class="col-sm-6">
