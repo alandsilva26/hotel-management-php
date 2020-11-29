@@ -30,7 +30,7 @@ function getAllReservations($pdo)
     return $rows;
 }
 
-function getRoomFromId($pdo, $id)
+function getRoomAmountFromId($id, $pdo)
 {
     $statement = $pdo->prepare("SELECT * FROM rooms WHERE room_id = :room_id");
 
@@ -40,6 +40,17 @@ function getRoomFromId($pdo, $id)
 
     $row = $statement->fetch(PDO::FETCH_ASSOC);
 
+    return $row["room_price"];
+}
+
+function getAmountFromId($id, $pdo)
+{
+    $sql = "SELECT room_price FROM rooms WHERE room_id = :room_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+        "room_id" => $id
+    ));
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
 
