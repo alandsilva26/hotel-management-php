@@ -13,11 +13,10 @@ include("./includes/header.php");
         <div class="col-md-3">
           <h3>Account Details</h3>
           <div class="sidenav navbar-expand-md">
+            <hr />
             <a href="accounts.html">Account</a>
             <hr />
-            <a href="#Notifications">Notifications</a>
-            <hr />
-            <a href="#password">Password</a>
+            <a href="account_reservations.html">Reservations</a>
             <hr />
           </div>
         </div>
@@ -46,7 +45,14 @@ include("./includes/header.php");
                 </div>
               </div>
               <hr /> -->
-
+              <?php
+                  $sql = "SELECT * FROM users WHERE user_id = :user_id";
+                  $stmt = $pdo->prepare($sql);
+                  $stmt->execute(array(
+                    ":user_id" => $_SESSION["user_id"],
+                  ));
+                  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+              ?>
               <div class="form-group">
                   <label for="user_fname">First name</label>
                   <input
@@ -55,6 +61,7 @@ include("./includes/header.php");
                     name="user_name"
                     id="user_name"
                     placeholder="First name"
+                    value="<?= $row["user_fname"] ?>"
                     readonly
                   />
                 </div>
@@ -66,6 +73,7 @@ include("./includes/header.php");
                     name="user_lname"
                     id="user_lname"
                     placeholder="Last name"
+                    value="<?= $row["user_lname"] ?>"
                     readonly
                   />
                 </div>
@@ -77,6 +85,7 @@ include("./includes/header.php");
                     name="user_email"
                     id="user_email"
                     placeholder="Email"
+                    value="<?= $row["user_email"] ?>"
                     readonly
                   />
                 </div>
@@ -88,6 +97,7 @@ include("./includes/header.php");
                     name="user_name"
                     id="user_name"
                     placeholder="First name"
+                    value="<?= $row["user_phone"] ?>"
                     readonly
                   />
                 </div>
@@ -99,6 +109,7 @@ include("./includes/header.php");
                     name="user_dob"
                     id="user_dob"
                     placeholder="Date of birth"
+                    value="<?= $row["user_dob"] ?>"
                     readonly
                   />
                 </div>
@@ -108,7 +119,7 @@ include("./includes/header.php");
             </form>
             
             <b>Delete account</b><br />
-            By deleting your account you will lose all your data&nbsp;<small><a class="md" href="#">delete account</a></small>
+            By deleting your account you will lose all your data&nbsp;<small><a class="md text-danger" href="#">delete account</a></small>
           </div>
         </div>
       </div>

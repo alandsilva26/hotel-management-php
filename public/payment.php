@@ -10,6 +10,7 @@
     if (!isset($_SESSION["reservation"])) {
         header("Location: reservation.php");
     }
+
 ?>
   <body>
     <?php include("./includes/navbar.php"); ?>
@@ -32,7 +33,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form role="form" id="payment-form">
+                        <form id="payment_form">
                         <div class="flex-row">
                                 <div class="col-xs-12 ">
                                     <div class="form-group">
@@ -49,7 +50,6 @@
                                         <label>CARD NUMBER</label>
                                         <div class="input-group">
                                             <input type="tel" class="form-control" placeholder="Valid Card Number" />
-                                            
                                         </div>
                                     </div>
                                 </div>
@@ -73,25 +73,65 @@
                                     <div class="form-group">
                                         <label>CARD OWNER</label>
                                         <input type="text" class="form-control" placeholder="Card Owner Names" />
-                                    </div>
+                                    </div>  
                                 </div>
                             </div>
-                        </form>
                     </div>
                     <div class="card-footer">
                         <div class="flex-row">
                             <div class="col-xs-12">
-                                <button class="btn btn-warning btn-lg btn-block">Process payment</button>
+                                <button type="submit" class="btn btn-warning btn-lg btn-block">Process payment</button>
                             </div>
                         </div>
                     </div>
                 </div>
                </div>
-
+               </form>
                <!-- <div class="col-md-1"></div> -->
             </div>
          </div>
     
 <?php include("./includes/footer.php"); ?>
+<script>
+      $(document).ready(function() {
+        $("nav").eq(0).addClass("bg-dark");
+        $("nav").eq(0).addClass("navbar-dark");
+
+        $("footer").eq(0).addClass("bg-dark");
+        $("footer").eq(0).addClass("text-light");
+        // bg-dark navbar-dark 
+
+
+        $("#payment_form").submit(function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        formData.append("confirm_booking", "confirm_booking");
+        
+
+        $.ajax({
+            url: "core/reservation_controller.php",
+            type: "POST",
+            data: formData,
+            success: function (data) {
+            console.log("HERE");
+            console.log(data); 
+            if (data.error == 1) {
+            
+            } else {
+                // window.location.href="payment.php";
+                return;
+            }
+            },
+            error: function (data, message, errorThrown) {
+            console.log(errorThrown);
+            // $("#error-form").html("<span class=\"p-2\">" + message + errorThrown + "</span>");
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+    });
+    </script>
   </body>
 </html>

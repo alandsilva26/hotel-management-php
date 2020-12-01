@@ -24,7 +24,7 @@ include("./includes/header.php");
                
                 $room_image = IMAGEROOT.$row["room_image"]; ?>
         <!-- Room element start -->
-        <div class="col-md-6">
+        <div class="room-card col-md-6">
           <div class="card card-expanded">
             <div class="basic">
               <div class="card-body">
@@ -49,6 +49,10 @@ include("./includes/header.php");
                 <li><span>Children:&nbsp;</span>2</li> -->
                 <li>
                   <span>Amenities:&nbsp;</span><?= $row["room_amenities"]; ?>
+                </li>
+                <p></p>
+                <li>
+                  <a id="<?= $row["room_id"] ?>" href="roomdetails.php?room_id=<?= $row["room_id"] ?>" class="details btn btn-sm btn-outline-success">Room Details</a>
                 </li>
               </ul>
             </div>
@@ -101,6 +105,11 @@ include("./includes/header.php");
         $("footer").eq(0).addClass("bg-dark");
         $("footer").eq(0).addClass("text-light");
         // bg-dark navbar-dark 
+
+        // $(".details").click(function () {
+        //   event.preventDefault();
+        //   console.log("HELLO");
+        // });
     });
     </script>
 </body>

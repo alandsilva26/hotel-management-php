@@ -120,38 +120,7 @@ if (isset($_GET["check_in_date"])) {
         // bg-dark navbar-dark 
     });
 
-    $("#reservation_details").submit(function (e) {
-      // $(".error-message").html("");
-      // $(".form-control").removeClass("is-invalid");
-      // $("#login-user-btn").html("Loggin you in...");
-
-      e.preventDefault();
-      var formData = new FormData(this);
-      formData.append("action", "reservation");
-
-      $.ajax({
-        url: "core/reservation_controller.php",
-        type: "POST",
-        data: formData,
-        success: function (data) {
-           console.log("HERE");
-           console.log(data); 
-          if (data.error == 1) {
-          
-          } else {
-            window.location.href="payment.php";
-            return;
-          }
-        },
-        error: function (data, message, errorThrown) {
-           console.log(errorThrown);
-          // $("#error-form").html("<span class=\"p-2\">" + message + errorThrown + "</span>");
-        },
-        cache: false,
-        contentType: false,
-        processData: false
-      });
-    });
+    
   </script>
     
   </body>

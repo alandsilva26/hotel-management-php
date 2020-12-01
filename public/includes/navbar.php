@@ -21,7 +21,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo SROOT."/public/reservation.php"; ?>"
-          >Reservations</a
+          >Reservation</a
           >
       </li>
       <li class="nav-item dropdown">

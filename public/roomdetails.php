@@ -1,6 +1,11 @@
 <?php
 require_once("./config.php");
 include("./includes/header.php");
+
+   if(!isset($_GET["room_id"])) {
+      header("Location: rooms.php");
+   }
+
 ?>
   <body>
     <style>
@@ -73,17 +78,19 @@ include("./includes/header.php");
    <div class="row">
       <div class="col col-8 col-md-8">
          <div class="row">
+         <?php
+               $sql = "SELECT * FROM rooms WHERE room_id = :room_id";
+               $stmt = $pdo->prepare($sql);
+               $stmt->execute(array(
+                  ":room_id" => $_GET["room_id"],
+               ));
+               $row = $stmt->fetch(PDO::FETCH_ASSOC);
+         ?>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-               <div class="carousel-inner">
+               <div class="carousel-inner" id="room_carousel">
                   <div class="carousel-item active">
-                     <img class="d-block w-100" src="https://i.pinimg.com/originals/c6/60/24/c66024ea79527d9bbafe79ed171558b9.jpg" alt="First slide">
+                     <img class="d-block w-100" src="<?= IMAGEROOT.$row["room_image"]; ?>" alt="First slide">
                   </div>
-                  <!-- <div class="carousel-item">
-                     <img class="d-block w-100" src="https://housely.com/wp-content/uploads/2016/07/Hotel-Room.jpg" alt="Second slide">
-                  </div>
-                  <div class="carousel-item">
-                     <img class="d-block w-100" src="https://images.fineartamerica.com/images-medium-large/nice-hotel-room-atiketta-sangasaeng.jpg" alt="Third slide">
-                  </div> -->
                </div>
                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,16 +104,16 @@ include("./includes/header.php");
          </div>
          <div class="row">
             <div class="col">
-               <h3>Lorem ipsum </h3>
+               <h3><?= $row["room_name"] ?></h3>
             </div>
             <div class="col" style="margin-top: 13px; margin-left:45px; font-family: 'Amaranth';font-weight:bold; font-size:20px">Starts from:something here...</div>
          </div>
          <div class="row">
             <div class="col" style="color:#FA4A5C;">
-               <p><i class="fa fa-bed" aria-hidden="true"></i> 2 bedroom</p>
+               <p><i class="fa fa-bed" aria-hidden="true"></i> <?= $row["room_beds"] ?> bedroom</p>
             </div>
             <div class="col" style="color:#FA4A5C;">
-               <p><i class="fa fa-shower" aria-hidden="true"></i> 2 bathroom</p>
+               <p><i class="fa fa-shower" aria-hidden="true"></i> <?= $row["room_name"] ?> bathroom</p>
             </div>
             <div class="col" style="color:#FA4A5C;">
                <p><i class="fa fa-square" aria-hidden="true"></i> 1250 sq.ft</p>
@@ -129,7 +136,7 @@ include("./includes/header.php");
             </div>
          </div>
          <div class="row">
-            <button class="btn btn-danger">Book now</button>
+            <a class="btn btn-danger" href="reservation.php">Book now</a>
          </div>
       </div>
       <div class="col col-4 col-md-4">
@@ -153,87 +160,7 @@ include("./includes/header.php");
                   consequatur nesciunt. Ullam, consequuntur necessitatibus 
                </P>
             </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus 
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus 
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus 
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus 
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus 
-               </P>
-            </div>
-         </div>
-         <div class="row">
-            <div class="review bg-white">
-               <p>Users</p>
-               <P style=color:lightgrey>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                  illum veniam qui veritatis praesentium voluptates atque enim
-                  quia exercitationem ipsa quaerat, delectus officia dolore rem
-                  consequatur nesciunt. Ullam, consequuntur necessitatibus 
-               </P>
-            </div>
-         </div>
+         </div>       
       </div>
    </div>
 </div>
@@ -241,7 +168,19 @@ include("./includes/header.php");
     <script>
       $(document).ready(function() {
 
-         var images = [];
+         var images = [
+            "https://i.pinimg.com/originals/c6/60/24/c66024ea79527d9bbafe79ed171558b9.jpg",
+            "https://housely.com/wp-content/uploads/2016/07/Hotel-Room.jpg",
+            "https://images.fineartamerica.com/images-medium-large/nice-hotel-room-atiketta-sangasaeng.jpg"
+         ];
+
+         images.forEach(item => $("#room_carousel").append(
+            `
+            <div class="carousel-item">
+                     <img class="d-block w-100" src="${item}">
+                  </div>
+            `
+         ));
 
 
         $("nav").eq(0).addClass("bg-dark");
