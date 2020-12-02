@@ -148,7 +148,7 @@ a .fa-linkedin.social-bordered, .fa-linkedin.social-bordered{
             </div>
             <div class="col-md-6 col-lg-4 mb-5">
                 <div class="details text-center bg-light">
-                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="330" height="350" alt="Aaron">
+                <img src="./media/images/aboutus/aaron1.jpg" width="330" height="350" alt="Aaron">
                     <div class="p-5">
                         <h3>Aaron D'silva</h3>
                         <p>
