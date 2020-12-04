@@ -39,7 +39,7 @@
   <body class="admin">
 <header id="admin-header">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="<?php echo SROOT."/admin/index.php"; ?>">Navbar</a>
+    <a class="navbar-brand" href="<?php echo SROOT."/admin/index.php"; ?>"><img src="<?php echo SROOT."/public/media/images/logo/aaa_logo.png";?>" class="d-inline-block align-top" height="90px"></img></a>
     <button
         class="navbar-toggler"
         type="button"
