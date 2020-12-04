@@ -73,15 +73,8 @@ a .fa-linkedin.social-bordered, .fa-linkedin.social-bordered{
 }
 
     </style>
-  <header id="home-header">
-    <div id="home-header--bg-image">
+  <header id="home">
       <?php include("./includes/navbar.php"); ?>
-      <div class="home-header--title">
-        <div class="container p-5">
-          <h1>About Us</h1>
-          <!-- <h3 id="reservation-form">for your next trip</h3> -->
-        </div>
-      </div>
     </div>
   </header>
   <div class="site-section bg-light">
@@ -264,5 +257,11 @@ a .fa-linkedin.social-bordered, .fa-linkedin.social-bordered{
   </div>
   </div>
   <?php include("./includes/footer.php"); ?>
+  <script>
+    $(document).ready(function () {
+        $("nav").eq(0).addClass("bg-dark");
+        $("nav").eq(0).addClass("navbar-dark");
+    });
+  </script>
 </body>
 </html>
