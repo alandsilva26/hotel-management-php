@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md px-md-5">
-  <a class="navbar-brand" href="<?php echo SROOT."/public/index.php"; ?>"><img src="<?php echo SROOT."/public/media/images/logo/aaa_logo.png";?>" class="d-inline-block align-top" height="100px"></img></a>
+  <a class="navbar-brand" href="<?php echo SROOT."/public/index.php"; ?>"><img src="<?php echo SROOT."/public/media/images/logo/aaa_logo.png";?>" class="d-inline-block align-top" style="max-height:100px;"></img></a>
   <button
     class="navbar-toggler"
     type="button"
