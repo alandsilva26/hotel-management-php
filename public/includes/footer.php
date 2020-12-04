@@ -6,7 +6,7 @@
     <div class="row">
       <!-- Grid column -->
       <div class="col-md-4 mb-md-0 mb-3">
-        <h5>Hotel Lemon</h5>
+        <h5>AAA Resorts</h5>
         <ul class="list-unstyled">
           <li>
             <a href="#!">About us</a>
@@ -21,16 +21,16 @@
         <h5 class="More">Links</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="#!">Rooms</a>
+            <a href="<?php echo SROOT."/public/rooms.php"; ?>">Rooms</a>
+          </li>
+          <!-- <li>
+            <a href="<?php echo SROOT."/public/survey.php"; ?>">Services</a>
+          </li> -->
+          <li>
+            <a href="<?php echo SROOT."/public/aboutus.php"; ?>">About</a>
           </li>
           <li>
-            <a href="#!">Services</a>
-          </li>
-          <li>
-            <a href="#!">About</a>
-          </li>
-          <li>
-            <a href="#!">News </a>
+            <a href="<?php echo SROOT."/public/survey.php"; ?>">Feedback</a>
           </li>
         </ul>
       </div>
