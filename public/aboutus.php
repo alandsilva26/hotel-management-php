@@ -5,7 +5,7 @@ include("./includes/header.php");
 <body>
     <style>
     .site-section{
-        padding:7em 0;
+        padding:4em 0;
     }
 
     /* .details{{

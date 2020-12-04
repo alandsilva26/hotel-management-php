@@ -116,10 +116,12 @@
             console.log("HERE");
             console.log(data); 
             if (data.error == 1) {
-            
             } else {
                 // window.location.href="payment.php";
-                window.location.href="index.php";
+                // window.location.href="index.php";
+                let reservation_id = data.message.reservation_id;
+                window.location.href = "bill_view.php?reservation_id=" + reservation_id;
+                // window.location.href="index.php";
                 return;
             }
             },

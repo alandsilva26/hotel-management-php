@@ -66,6 +66,6 @@ if (isset($_POST['confirm_booking'])) {
     unset($_SESSION["reservation"]);
     $pdo->commit();
 
-    sendJson("OK");
+    sendJson(array("reservation_id" => $reservation_id));
     return;
 }
