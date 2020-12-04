@@ -1,16 +1,11 @@
 <?php
 require_once("./config.php");
-$jsonobj = '{"Peter":35,"Ben":37,"Joe":43}';
 
-$test = json_decode($jsonobj);
-var_dump(json_decode($jsonobj));
-        
-    foreach ($test as $key => $value) {
-        var_dump($key);
-        var_dump($value);
-    }
-// include("./includes/header.php");
+
+
+$orgDate = "12/3/2020";
+$date = str_replace('/"', '-', $orgDate);  
+$newDate = date("Y/m/d", strtotime($date));  
+echo "New date format is: ".$newDate. " (YYYY/MM/DD)";  
+
 ?>
-    <!-- <?php include("./includes/navbar.php"); ?> -->
-</body>
-</html>

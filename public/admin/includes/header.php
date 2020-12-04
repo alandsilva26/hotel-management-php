@@ -96,9 +96,9 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo SROOT."/admin/add_room.php"; ?>">Add new Room</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="<?php echo SROOT."/admin/reservation.php"; ?>">Reservations</a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link" href="./users.php">Users</a>
         </li>

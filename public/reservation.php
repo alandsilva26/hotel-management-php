@@ -95,6 +95,7 @@ if (isset($_GET["check_in_date"])) {
     <?php include("./includes/footer.php"); ?>
     <script>
    $("#check_in_date").datepicker({
+   dateFormat: "yy-mm-dd",
     minDate: 0,
     numberOfMonths: [1, 2],
     onSelect: function (data) {
@@ -105,6 +106,7 @@ if (isset($_GET["check_in_date"])) {
   });
 
   $("#check_out_date").datepicker({
+   dateFormat: "yy-mm-dd",
     minDate: 1,
     numberOfMonths: [1, 2],
     onSelect: function () {
@@ -118,6 +120,38 @@ if (isset($_GET["check_in_date"])) {
         $("nav").eq(0).addClass("bg-dark");
         $("nav").eq(0).addClass("navbar-dark");
         // bg-dark navbar-dark 
+
+
+        $("#reservation_details").submit(function (e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        formData.append("action", "reservation");
+        
+
+        $.ajax({
+            url: "core/reservation_controller.php",
+            type: "POST",
+            data: formData,
+            success: function (data) {
+            console.log("HERE");
+            console.log(data); 
+            if (data.error == 1) {
+            
+            } else {
+               window.location.href="payment.php";
+               return;
+            }
+            },
+            error: function (data, message, errorThrown) {
+            console.log(errorThrown);
+            // $("#error-form").html("<span class=\"p-2\">" + message + errorThrown + "</span>");
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    });
+
     });
 
     

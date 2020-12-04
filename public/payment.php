@@ -119,6 +119,7 @@
             
             } else {
                 // window.location.href="payment.php";
+                window.location.href="index.php";
                 return;
             }
             },

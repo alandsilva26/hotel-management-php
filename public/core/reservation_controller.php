@@ -4,6 +4,7 @@ header("Content-Type: application/json; charset=utf-8");
 
     if (isset($_POST["action"])) {
         if ($_POST["action"] == "reservation") {
+
             $_SESSION["reservation"] = array(
                 "check_in_date" => $_POST["check_in_date"],
                 "check_out_date" => $_POST["check_out_date"],

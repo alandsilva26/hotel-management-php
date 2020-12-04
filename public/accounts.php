@@ -14,9 +14,9 @@ include("./includes/header.php");
           <h3>Account Details</h3>
           <div class="sidenav navbar-expand-md">
             <hr />
-            <a href="accounts.html">Account</a>
+            <a href="accounts.php">Account</a>
             <hr />
-            <a href="account_reservations.html">Reservations</a>
+            <a href="account-reservations.php">Reservations</a>
             <hr />
           </div>
         </div>
