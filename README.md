@@ -1,40 +1,65 @@
-# hotel-management-php
+# Hotel management system using php and mysql.
 
-Semester 5 Web Development Lab Project. Hotel management system using php and mysql.
+Semester 5 Web Development Lab Mini Project.This projects aims to create a full fleged hotel management system which can be further scaled as per requirement.\ It includes a modern responsive UI built using bootstrap 4. We have also made extensive use of jquery ajax to perform various network requests. This project covers the following topics
+
+- Responsive web design
+- Web apps using PHP
+- Database design
+- Ajax
+
+- []()
+- []()
+
+## Technologies used
+
+- Frontend - HTML, CSS, JS
+- Frameworks - Jquery, Sass, Bootstrap, Charts.js
+- Backend - PHP, MYSQL
+- PHP packages - phpmailer, mpdf
+- Package managers - npm, composer
 
 ## Dependencies
 
-- PHP and mysql
+- Composer
+- npm
+- Xampp or seperate installation of PHP and mysql
+- Text Editor(VSCODE)
 
 # Get started
 
-- Install dependencies - `npm install`
-- Start development server - `npm run start`
+- Install frontent dependencies - `npm install`
+- Install backend dependencies - `composer install`
+
+#### Note:
+
+All `sass` files are located in `public/scss`. If making changes here run the command `npm run watch-sass` in a seperate terminal. This command watches sass files for any changes and compiles them to css directory.\
+Or you may directly edit the css file in `public/css`.\
+
+#### Side note:
+
+If you just require the frontend files of this project see the project [https://github.com/alandsilva26/hotel-management-website-template](https://github.com/alandsilva26/hotel-management-website-template). Installation instructions in readme.\
 
 ## To-do
 
 - Bootstrap templating section (no css pure bootstrap)
 
-* [ ] - Home page
-    - [ ] - Starter room search form (check in, check out, etc)
-    - [ ] - Services offered
-    - [ ] - Featured Rooms
-    - [ ] - About Hotel(optional)
-* [ ] - Show booking options page (with same form as home but with additional details)
-* [ ] - Reservation form to confirm details (multipart)
-    - [ ] - Payment form
-    - [ ] - Email receipt generator (optional)
-* [ ] - Rooms browsing page with filters
-* [ ] - Account page with reservation history etc
-* [ ] - User Registration page with multi part form (email confirmation)
-    - [ ] - Optional External authentication providers (google sign in, etc)
-* [ ] - Login page
-
-# Additional tasks
-
-- [ ] - View all rooms
-- [ ] - Add new room
-
-## Extra tasks
-
-- Gather resources(hotel management websites for reference, templates for reference, good designs, etc)
+* [x] - Client Side
+    - [x] - Check in and check out date form(this redirects to reservation form)
+    - [x] - Services offered(About us)
+    - [x] - Featured Rooms
+    - [x] - About Hotel
+    - [x] - View all rooms page
+    - [x] - Room details page
+    - [x] - Payment form(this is temporary as an actual payment gateway will be integrated in the future)
+* [x] - Auth
+    - [x] - Login Page
+    - [x] - Signup Page
+    - [x] - User verification page
+* [x] - Admin
+    - [x] - Room actions(add, update, delete)
+    - [x] - View all rooms
+* [x] - Features
+    - [x] - Book rooms
+    - [x] - CRUD rooms(admin)
+    - [x] - Statistics(Charts.js)
+    - [x] - View my reservations
