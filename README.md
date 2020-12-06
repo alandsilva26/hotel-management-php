@@ -9,8 +9,7 @@ Semester 5 Web Development Lab Mini Project.This projects aims to create a full 
 - Database design
 - Ajax
 
-- [Miniproject presentation](https://docs.google.com/presentation/d/1wDXpMjMBRi41GhY2Tcko6buPvzr599y_ZQ6vEM5LjTE/)
-
+- [Miniproject presentation](https://docs.google.com/presentation/d/1BsYYEompbIkKHtLUARA2gEXiMBr9GAO1wXQCur1SiHk/edit?usp=sharing)
 ### NOTE:
 * Please note that to utilize this you need to have a database named `hotel` in your DBMS(Mysql) and a user `admin` with password `admin` with all previleges.
 

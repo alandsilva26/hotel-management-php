@@ -1,0 +1,13 @@
+SetEnv env_db_name "hotel"
+SetEnv env_user_name "admin"
+SetEnv env_password "admin"
+SetEnv env_db_host "localhost"
+
+
+# We have used infinityfree.net as our remote host to store ftp files. You may disable this feature by commenting the code
+SetEnv env_ftp_server  "ftpupload.net"
+SetEnv env_ftp_user "epiz_27055485"
+SetEnv env_ftp_pass "ijiLFt8Ks4"
+
+# This is the password of the email used to send email verifications
+SetEnv email_password "tgdwsmgvpwfyduoe"
