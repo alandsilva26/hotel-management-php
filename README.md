@@ -9,9 +9,13 @@ Semester 5 Web Development Lab Mini Project.This projects aims to create a full 
 - Database design
 - Ajax
 
+### Resources:
+
 - [Miniproject presentation](https://docs.google.com/presentation/d/1BsYYEompbIkKHtLUARA2gEXiMBr9GAO1wXQCur1SiHk/edit?usp=sharing)
+
 ### NOTE:
-* Please note that to utilize this you need to have a database named `hotel` in your DBMS(Mysql) and a user `admin` with password `admin` with all previleges.
+
+- Please note that to utilize this you need to have a database named `hotel` in your DBMS(Mysql) and a user `admin` with password `admin` with all previleges.
 
 ## Technologies used
 
@@ -23,10 +27,10 @@ Semester 5 Web Development Lab Mini Project.This projects aims to create a full 
 
 ## Dependencies
 
-- Composer
-- npm
-- Xampp or seperate installation of PHP and mysql
-- Text Editor(VSCODE)
+- [Composer](https://getcomposer.org/)
+- [npm](https://www.npmjs.com/)
+- [Xampp](https://www.apachefriends.org/index.html) or seperate installation of PHP and mysql
+- Text Editor([VS Code](https://code.visualstudio.com/))
 
 # Get started
 
