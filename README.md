@@ -1,6 +1,8 @@
 # Hotel management system using php and mysql.
 
-## Please go through entire readme for complete project specifications
+#### Please go through entire readme for complete project specifications
+
+#### [Live preview](https://alandsilva26.github.io/hotel-management-website-template/)
 
 Semester 5 Web Development Lab Mini Project.This projects aims to create a full fleged hotel management system which can be further scaled as per requirement. It includes a modern responsive UI built using bootstrap 4. We have also made extensive use of jquery ajax to perform various network requests. This project covers the following topics
 
