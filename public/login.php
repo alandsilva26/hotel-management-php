@@ -91,7 +91,7 @@ if (isLoggedIn()) {
   <script>
     $(document).ready(function () {
     $("nav").addClass("navbar-light");
-    $("#user_email").val("alandsilva2001@gmail.com");
+    $("#user_email").val("alandsilva@gmail.com");
     $("#user_password").val("alan");
 
     function handleError(about, message) {

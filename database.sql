@@ -116,7 +116,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'admin@gmail.com','Admin ','Account',1,'5a4b25aaed25c2ee1b74de72dc03c14e','2000-07-19','7030218024',1,'8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918','2020-11-22 17:52:46','default_user.jpg'),(6,'alandsilva2001@gmail.com','Alan','Dsilva',1,'c3e878e27f52e2a57ace4d9a76fd9acf','2020-11-23','7030218024',1,'db42328112177c2d6f2f6ca7f33c8e81084b8ff3e14202254137e22673bce2c8','2020-11-25 04:03:00','default_user.jpg');
+INSERT INTO `users` VALUES (3,'admin@gmail.com','Admin ','Account',1,'5a4b25aaed25c2ee1b74de72dc03c14e','2000-07-19','0213123118024',1,'8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918','2020-11-22 17:52:46','default_user.jpg'),(6,'alandsilva@gmail.com','Alan','Dsilva',1,'c3e878e27f52e2a57ace4d9a76fd9acf','2020-11-23','0213123118024',1,'db42328112177c2d6f2f6ca7f33c8e81084b8ff3e14202254137e22673bce2c8','2020-11-25 04:03:00','default_user.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

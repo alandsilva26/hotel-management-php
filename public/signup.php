@@ -166,11 +166,11 @@
         $("nav").addClass("navbar-light");
 
 
-        $("#user_phone").val("7030218024");
+        $("#user_phone").val("703202020");
         $("#user_fname").val("Alan");
         $("#user_lname").val("Dsilva");
         $("#user_dob").val("2000/07/19");
-        $("#user_email").val("alandsilva2001@gmail.com");
+        $("#user_email").val("alandsilva@gmail.com");
         $("#user_password").val("alan");
 
         
