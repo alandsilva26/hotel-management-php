@@ -1,5 +1,7 @@
 # Hotel management system using php and mysql.
 
+## Please go through entire readme for complete project specifications
+
 Semester 5 Web Development Lab Mini Project.This projects aims to create a full fleged hotel management system which can be further scaled as per requirement.\ It includes a modern responsive UI built using bootstrap 4. We have also made extensive use of jquery ajax to perform various network requests. This project covers the following topics
 
 - Responsive web design
@@ -7,8 +9,10 @@ Semester 5 Web Development Lab Mini Project.This projects aims to create a full 
 - Database design
 - Ajax
 
-- []()
-- []()
+- [Miniproject presentation](https://docs.google.com/presentation/d/1wDXpMjMBRi41GhY2Tcko6buPvzr599y_ZQ6vEM5LjTE/)
+
+### NOTE:
+* Please note that to utilize this you need to have a database named `hotel` in your DBMS(Mysql) and a user `admin` with password `admin` with all previleges.
 
 ## Technologies used
 
@@ -63,3 +67,8 @@ If you just require the frontend files of this project see the project [https://
     - [x] - CRUD rooms(admin)
     - [x] - Statistics(Charts.js)
     - [x] - View my reservations
+
+## Other
+
+- A database export copy is included in the file `database.sql`
+- Please note that to utilize this you need to have a database named `hotel` in your DBMS(Mysql) and a user `admin` with password `admin` with all previleges.
