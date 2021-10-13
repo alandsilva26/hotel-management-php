@@ -1,5 +1,21 @@
 # Hotel management system using php and mysql.
 
+## Update 13th October 2021
+* This project was made hastily with all knowledge of php that I had at that time. This is functional but poorly written code.
+* Was developed on Windows and will work on windows. Has not been tested on linux!
+
+## HOW TO USE
+* Install [Xampp](https://www.apachefriends.org/download.html)
+* Clone the repository into `htdocs` folder of Xampp. If you followed default setup that will be `C:\xampp\htdocs`.
+* Start Xampp control panel. Start the Apache and MySql modules.
+* ![image](https://user-images.githubusercontent.com/47769063/137183880-f6cbc47f-58ac-407a-855a-c44cc2a15063.png)
+* Open [phpmyadmin](http://localhost/phpmyadmin/server_databases.php) in browser and create a new database called `hotel`.
+* ![image](https://user-images.githubusercontent.com/47769063/137184066-c8c37b9a-7621-4644-ba99-0983b452875d.png)
+* Go to your cloned project directory. If you have followed the above steps correctly, running the `import.bat` file will populate the database.(double click import.bat)
+* Now going to [http://localhost/hotel-management-php/](http://localhost/hotel-management-php/) will open the project.
+
+<hr />
+
 #### Please go through entire readme for complete project specifications
 
 ## [Preview](https://alandsilva26.github.io/hotel-management-website-template/preview.html)
