@@ -122,7 +122,7 @@
                 let reservation_id = data.message.reservation_id;
                 window.location.href = "bill_view.php?reservation_id=" + reservation_id;
                 // window.location.href="index.php";
-                return;
+                // return;
             }
             },
             error: function (data, message, errorThrown) {

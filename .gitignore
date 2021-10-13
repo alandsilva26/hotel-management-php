@@ -3,5 +3,4 @@ package-lock.json
 debug.log
 public/admin/test.php
 public/admin/file.php
-vendor/
 composer.lock

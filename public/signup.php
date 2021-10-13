@@ -166,12 +166,12 @@
         $("nav").addClass("navbar-light");
 
 
-        $("#user_phone").val("703202020");
-        $("#user_fname").val("Alan");
-        $("#user_lname").val("Dsilva");
+        $("#user_phone").val("903202020");
+        $("#user_fname").val("Some");
+        $("#user_lname").val("Name");
         $("#user_dob").val("2000/07/19");
-        $("#user_email").val("alandsilva@gmail.com");
-        $("#user_password").val("alan");
+        $("#user_email").val("admin@gmail.com");
+        $("#user_password").val("admin");
 
         
       function handleError(about, message) {

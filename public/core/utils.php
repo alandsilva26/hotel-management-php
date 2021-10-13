@@ -76,7 +76,6 @@ function my_error_handler($error_no, $error_msg)
 
 function isUserVerified($pdo, $email)
 {
-    echo $email;
     
     $sql = "SELECT user_verified FROM users WHERE user_email = :user_email";
 

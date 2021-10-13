@@ -134,9 +134,8 @@ include("./config.php");
     
         $mpdf->writeHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
         $mpdf->writeHTML($html, \Mpdf\HTMLParserMode::HTML_BODY);
-    
-        $mpdf->Output('hotel_reservation.pdf', 'D');
-    
+
+        $mpdf->Output('hotel_reservation' . $_GET["reservation_id"] . '.pdf', 'D');
     }
     ?>
 
@@ -163,3 +162,7 @@ include("./config.php");
         </script>
     </body>
     </html>
+    <?php 
+            header("Location: index.php");
+            return;
+    ?>
