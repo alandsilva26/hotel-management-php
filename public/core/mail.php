@@ -6,11 +6,6 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require '../../vendor/autoload.php';
-
-// $user_name = $_GET["user_name"];
-// $user_email = $_GET["user_email"];
-// $verificationHash = $_GET["user_hash"];
-// mailUser("alandsilva2001@gmail.com", "meon");
       
 function mailUser($user_email, $verificationHash)
 {

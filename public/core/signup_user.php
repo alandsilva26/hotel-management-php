@@ -1,6 +1,5 @@
 <?php
     require_once("../config.php");
-    require_once("./mail.php");
 
     header("Content-Type: application/json; charset=utf-8");
     
@@ -34,7 +33,7 @@
         
     ));
 
-    mailUser($user_email, $hash);
+    // mailUser($user_email, $hash);
 
     
     $_SESSION["user_id"] = $pdo->lastInsertId();

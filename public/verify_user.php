@@ -2,13 +2,13 @@
   require_once("./config.php");
 
   $status = array(
-    "verified" => null
+    "verified" => true
   );
 
  if (isset($_SESSION["user_email"])) {
      $verification = isUserVerified($pdo, $_SESSION["user_email"]);
 
-     if ($verification["verified"] == 1) {
+     if ($verification["verified"] == 0) {
          $status["verified"] = true;
 
          header("Location: index.php");
