@@ -21,14 +21,25 @@
           return;
       }
 
-      $room_image = $_FILES["room_image"]["name"];
+    $room_image = $_FILES["room_image"]["name"];
 
-      $result = uploadImage("room_image");
+    $target_dir =  $target_dir = ROOT . DIRECTORY_SEPARATOR . "media" . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR .  "rooms" . DIRECTORY_SEPARATOR;
+    $target_file = $target_dir . basename($_FILES["room_image"]["name"]);
+    
+    if (!file_exists($target_file)) {
+        // File does not exist. Upload
+        if (!move_uploaded_file($_FILES["room_image"]["tmp_name"], $target_file)) {
+            sendJson("There was an error uploading file");
+            return;
+        }
+    } 
 
-      if ($result["status"] == 1) {
-          sendJson($result["message"], 1, "room_image");
-          return;
-      }
+    //   $result = uploadImage("room_image");
+
+    //   if ($result["status"] == 1) {
+    //       sendJson($result["message"], 1, "room_image");
+    //       return;
+    //   }
   } else {
       sendJson("Please select a valid image", 1, "room_image");
       return;
