@@ -2,6 +2,11 @@
   require("../config.php");
   include("./includes/header.php");
 ?>
+
+
+
+
+
       <section class="content">
       <div class="text-danger">
       <?php
